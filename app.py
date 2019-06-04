@@ -12,7 +12,7 @@ def location():
     name = request.form.get("name")
     if not name:
         return render_template("location.html",name="Enter valid location")
-    r = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={name}&appid=001e2945294f12d900be61fdb7f6ff0c')
+    r = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={name}&appid=ENTER-API-KEY-HERE')
     name=name.upper()
     temp2=json.loads(r.text)['main']['temp']
     temp2 = temp2 - 273.15
